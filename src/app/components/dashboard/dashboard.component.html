@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-4">
+            <!--  Dejaré esta imagen aqui por si acaso la necesito despues
+                <img [src]="urlImagen" alt="" width="300px" height="300px">
+                
+                aqui abajo esta el mapa del clima
+             -->
+             <p></p>
+             <br>
+             <p></p>
+             <br>
+             <div class="card mt-3">
+                <div class="card-body">
+                    <b><p>Mapa interactivo</p></b>
+                    <iframe width="300" height="350" src="https://embed.windy.com/embed2.html?lat=26.103&lon=-106.156&detailLat=25.790&detailLon=-109.005&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
+
+                </div>
+
+            </div>
+             
+
+        </div>
+        <div class="col-lg-6">
+            <input type="text" [(ngModel)]="ciudad" class="form-control form-control-lg size" placeholder="Ingresa ciudad">
+            <button (click)="obtenerClima()" class="btn btn-primary btn-lg btn-block mt-4 size" [disabled]="ciudad == ''">🔎</button>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <p>Clima: <b>{{clima}}</b></p>
+                    <p>Temperatura: <b>{{ temperatura | number: '1.2-2'}} °C</b></p>
+                    <p>Humedad: <b>{{humedad}}</b></p>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>
